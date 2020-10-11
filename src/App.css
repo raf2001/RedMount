@@ -1,38 +1,327 @@
-.App {
-  text-align: center;
+/*
+#	Author: Rafal Sip
+#	Version: 0.1
+#   Adress: cloudology.pl
+*/
+
+/*
+#   Reseting settings for css
+*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*
+#   NavBar & body settings
+*/
+body {
+    background-color: #eceff4;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav {
+    display: flex;
+    padding: 10px;
+    background: #384351;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 9999;
+    box-shadow: 0px 2px 4px #c7c7c7;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+nav ul {
+    text-align: center;
+    float: right;
+    padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+nav ul li {
+    display: inline-block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav ul li a {
+    text-decoration: none;
+    display: block;
+    padding: 20px 10px;
+    margin: 0 10px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: bold;
+    transition: all 200ms linear;
 }
+
+
+nav a:hover {
+    color: #c18055;
+}
+
+
+nav h1 {
+    font-size: 30px;
+}
+
+nav h1>a {
+    color: #c18055;
+}
+
+nav h1>a:hover {
+    color: #3ab4a6;
+}
+
+nav > div {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 70vw;
+}
+
+
+/*
+#	Content varsion: 1 ##########################################
+*/
+
+div#content {
+    display: block;
+    min-height: 400px;
+    margin: 130px 0 0 0;
+}
+
+.main {
+    height: 600px;
+
+    z-index: 1;
+}
+
+.box {
+    display: inline-block;
+    float: none !important;
+    vertical-align: top;
+    margin-bottom: 25px;
+}
+
+#map {
+    height: 700px;
+}
+
+div#content h1,
+h2 {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.main_icons {
+    color: #1ABC9C;
+}
+
+.main_icons::after {
+    text-shadow: 2px 2px 4px rgba(159, 92, 74);
+    -webkit-text-shadow: 2px 2px 4px rgba(159, 92, 74);
+}
+
+.side_panel {
+    display: block;
+}
+
+.filter {
+    border: 1px solid #cbcacb;
+    padding: 15px 10px 20px 10px;
+    margin-bottom: 15px;
+    font-size: 12px;
+    display: block;
+}
+
+.filter_txt {
+    font-size: 14px;
+    color: #404042;
+    padding-bottom: 10px;
+    font-weight: 600;
+    max-height: 150px;
+}
+
+/*
+#	Forms varsion: 1 ##########################################
+*/
+
+input {
+    border-bottom: 1px solid #22282a;
+    border-left: 1px solid #22282a;
+    border-top: 1px solid #22282a;
+    border-right: 0;
+    border-radius: 3px 0 0 3px;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    padding-left: 10px;
+    float: left
+}
+
+button {
+    background: #1ABC9C;
+    /* background: #662483;*/
+    display: inline-block;
+    background-size: 30px;
+    border: 1px solid #22282a;
+    border-radius: 0 3px 3px 0;
+    color: #fff;
+    width: 40px;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox]+label:before {
+    font-family: FontAwesome;
+    display: inline-block;
+
+}
+
+input[type=checkbox]+label:before {
+    content: "\f096";
+    letter-spacing: 10px;
+}
+
+input[type=checkbox]:checked+label:before {
+    content: "\f046";
+    letter-spacing: 8px;
+    color: #1ABC9C;
+}
+
+label#check {
+    font-weight: normal !important;
+    font-size: 13px;
+}
+
+.searcher {
+    display: inline-block;
+    height: 300px;
+    margin-top: 150px;
+    background-color: rgba(100, 100, 100, 0.5);
+}
+
+.newsletter {
+    display: inline-block;
+}
+
+.search_form {
+    margin: 0 0 0 35%;
+    border: 1;
+}
+
+.search_input {
+    height: 40px;
+    width: 500px;
+}
+
+.search_button {
+    height: 40px;
+    float: left;
+}
+
+.newsletter_input {
+    height: 40px;
+    width: 180px;
+}
+
+.newsletter_button {
+    height: 40px;
+    float: left;
+}
+
+.filter_button {
+    height: 40px;
+    width: 100%;
+    background: #1ABC9C;
+    border-radius: 0;
+    font-size: 14px;
+    font-weight: 400;
+    border: 0;
+}
+
+.filter_input {
+    height: 40px;
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #d1d1d1;
+}
+
+.form_control {
+    height: 10px;
+    font-size: 13px;
+}
+
+button:hover {
+    background-color: #47c9af;
+}
+
+input:focus,
+button:active,
+button:focus {
+    outline: none;
+}
+
+
+/*
+#	Footer version: 1 ##########################################
+*/
+footer h4 {
+    /*color: #662483;*/
+    color: #1ABC9C;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 0;
+}
+
+footer a {
+    color: #1ABC9C;
+    decoration: none;
+}
+
+footer a:hover {
+    color: #1ABC9C;
+    decoration: underline;
+}
+
+footer {
+    background: #22282a;
+    width: 100%;
+    padding: 30px 0;
+    color: #fff;
+    font-size: 13px;
+}
+
+footer ul {
+    text-align: left;
+    float: left;
+
+}
+
+footer ul li {
+    display: list-item;
+}
+
+footer ul li a {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-size: 13px;
+    line-height: 25px;
+    font-weight: normal;
+}
+
+footer ul li a:hover {
+    color: #e5e5e5;
+    background: #383d3f;
+}
+

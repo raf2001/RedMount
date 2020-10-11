@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState, useEffect} from 'react';
+import NavBar from './components/navbar';
+import Content from './components/content';
+import Footer from './components/footer';
 import './App.css';
 
 function App() {
+  const [menus, setMenu] = useState([]);
+  const [content, setContent] = useState("");
+  const [footer, setFooter] = useState("");
+  const [logo, setLogo] = useState("");
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar setMenu = { setMenu } setLogo = {setLogo}/>
+      <Content setContent = {setContent} />
+      <Footer setFooter = {setFooter} setMenu = { setMenu } />
     </div>
   );
 }
